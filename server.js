@@ -2,7 +2,7 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
-const port =  process.env.PORT || 3000; // port for Heroku which e get from Process, process.env is an object that stores all our enviromental variable as key value pairs
+const port =  process.env.PORT || 3000; // port for Heroku which we get from Process, process.env is an object that stores all our enviromental variable as key value pairs
 
 var app = express();
 
@@ -61,6 +61,16 @@ app.get('/about', (req, res) => {
         
         pageTitle: 'About Us',
         para: 'Screaming try on'
+    });
+    
+});
+
+app.get('/projects', (req, res) => {
+    
+    res.render('projects.hbs',{
+        
+        pageTitle:'Projects'
+        
     });
     
 });
